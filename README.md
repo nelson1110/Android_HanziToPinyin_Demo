@@ -3,7 +3,9 @@
 
 ## 参考：
 [汉字 Unicode 编码范围](http://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php)
+
 [Unicode字符编码—就这么回事](http://blog.csdn.net/u012672456/article/details/44750277#comments)
+
 [利用Android源码，轻松实现汉字转拼音功能](http://blog.coderclock.com/2017/04/04/android/2017-04-04/)
 
 
@@ -11,6 +13,7 @@
 ## HanziToPinyin.java来源
 
 [HanziToPinyin.java来自Android 4.2.2系统源码](http://www.grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android-apps/4.2.2_r1/com/android/providers/contacts/HanziToPinyin.java#HanziToPinyin)
+
 *Ps：从Android4.3开始，HanziToPinyin不再独立使用*
 
 ## 使用方式：
