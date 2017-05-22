@@ -43,6 +43,7 @@ public class HanziToPinyin {
      * Each unihans is the first one within same pinyin when collator is zh_CN.
      */
     public static final char[] UNIHANS = {
+            // 阿 哎 安 肮 凹 八
             '\u963f', '\u54ce', '\u5b89', '\u80ae', '\u51f9', '\u516b',
             '\u6300', '\u6273', '\u90a6', '\u52f9', '\u9642', '\u5954',
             '\u4f3b', '\u5c44', '\u8fb9', '\u706c', '\u618b', '\u6c43',
@@ -99,8 +100,11 @@ public class HanziToPinyin {
             '\u72fb', '\u590a', '\u5b59', '\u5506', '\u4ed6', '\u56fc',
             '\u574d', '\u6c64', '\u5932', '\u5fd1', '\u71a5', '\u5254',
             '\u5929', '\u65eb', '\u5e16', '\u5385', '\u56f2', '\u5077',
+            // 凸 湍 推 吞 乇 穵
             '\u51f8', '\u6e4d', '\u63a8', '\u541e', '\u4e47', '\u7a75',
+            // 歪 弯 尣 危 昷 翁
             '\u6b6a', '\u5f2f', '\u5c23', '\u5371', '\u6637', '\u7fc1',
+            // 挝(wō) 乌 夕 虲 仚 乡
             '\u631d', '\u4e4c', '\u5915', '\u8672', '\u4eda', '\u4e61',
             '\u7071', '\u4e9b', '\u5fc3', '\u661f', '\u51f6', '\u4f11',
             '\u5401', '\u5405', '\u524a', '\u5743', '\u4e2b', '\u6079',
@@ -112,7 +116,9 @@ public class HanziToPinyin {
             '\u4f4b', '\u8707', '\u8d1e', '\u4e89', '\u4e4b', '\u5cd9',
             '\u5ea2', '\u4e2d', '\u5dde', '\u6731', '\u6293', '\u62fd',
             '\u4e13', '\u5986', '\u96b9', '\u5b92', '\u5353', '\u4e72',
+            // 宗 邹 租 钻 厜 尊
             '\u5b97', '\u90b9', '\u79df', '\u94bb', '\u539c', '\u5c0a',
+            // 昨 兙 口 口
             '\u6628', '\u5159', '\u9fc3', '\u9fc4',};
 
     /**
@@ -489,6 +495,7 @@ public class HanziToPinyin {
             token.target = letter;
             return token;
         } else {
+            // letter < FIRST_PINYIN_UNIHAN则为负数
             cmp = COLLATOR.compare(letter, FIRST_PINYIN_UNIHAN);
             // 找不到
             if (cmp < 0) {
@@ -520,6 +527,7 @@ public class HanziToPinyin {
             while (begin <= end) {
                 offset = (begin + end) / 2;
                 final String unihan = Character.toString(UNIHANS[offset]);
+                // 按a b c d e f 来查找，找到 同音字
                 cmp = COLLATOR.compare(letter, unihan);
                 if (cmp == 0) {
                     break;
