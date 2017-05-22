@@ -30,3 +30,6 @@ https://github.com/xiaxveliang/Android_HanziToPinyin_Demo
 + 根据输入的字符，二分查找UNIHANS列表中的对应同音字
 + 输出UNIHANS中找到的对应字符的拼音
 
+## 缺点与不足
+
+**如果在UNIHANS数组中，找不到对应的同音字则无法解析出拼音**
